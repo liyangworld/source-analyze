@@ -1,0 +1,131 @@
+{% extends "../../_layouts/layout_bootstrap.html" %} 
+{% set title = "Bootstrap-组件-缩略图" %} 
+{% set pageActive = "componentsThumbnails" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title">组件 - 缩略图</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="box-header with-border">
+        <p>thumbnails.less </p>
+    </div>
+    
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">Less</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">Sass</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-less">
+//
+// Thumbnails
+// --------------------------------------------------
+
+
+// Mixin and adjust the regular image class
+.thumbnail {
+    display: block;
+    padding: @thumbnail-padding;
+    margin-bottom: @line-height-computed;
+    line-height: @line-height-base;
+    background-color: @thumbnail-bg;
+    border: 1px solid @thumbnail-border;
+    border-radius: @thumbnail-border-radius;
+    .transition(border .2s ease-in-out);
+
+    > img,
+    a > img {
+    &:extend(.img-responsive);
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    // Add a hover state for linked versions only
+    a&:hover,
+    a&:focus,
+    a&.active {
+    border-color: @link-color;
+    }
+
+    // Image captions
+    .caption {
+    padding: @thumbnail-caption-padding;
+    color: @thumbnail-caption-color;
+    }
+}                            
+                        </code>
+                    </pre>
+        
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-scss">
+//
+// Thumbnails
+// --------------------------------------------------
+
+
+// Mixin and adjust the regular image class
+.thumbnail {
+    display: block;
+    padding: $thumbnail-padding;
+    margin-bottom: $line-height-computed;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $thumbnail-border-radius;
+    @include transition(border .2s ease-in-out);
+
+    > img,
+    a > img {
+    @include img-responsive;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    // [converter] extracted a&:hover, a&:focus, a&.active to a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active
+
+    // Image captions
+    .caption {
+    padding: $thumbnail-caption-padding;
+    color: $thumbnail-caption-color;
+    }
+}
+
+// Add a hover state for linked versions only
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+    border-color: $link-color;
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

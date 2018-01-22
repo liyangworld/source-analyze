@@ -1,0 +1,330 @@
+{% extends "../_layouts/layout_base.html" %} 
+
+{% set headerNav = "bootstrap" %} 
+
+{% block mainSidebar %}
+
+<aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <li class="{% if pageActive == 'description' %}active{% endif %}">
+                <a href="/bootstrap">
+                    <i class="fa fa-free-code-camp"></i>
+                    <span>解读 Bootstrap v3.3.7</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-flag"></i>
+                    <span>源码 - 全局样式</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{% if pageActive == 'globalSummary' %}active{% endif %}">
+                        <a href="/bootstrap/global/summary">
+                            <i class="fa fa-circle-o"></i>概述 bootstrap.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalVariables' %}active{% endif %}">
+                        <a href="/bootstrap/global/variables">
+                            <i class="fa fa-circle-o"></i>变量 variables.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalMixins' %}active{% endif %}">
+                        <a href="/bootstrap/global/mixins">
+                            <i class="fa fa-circle-o"></i>混合 mixins.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalNormalize' %}active{% endif %}">
+                        <a href="/bootstrap/global/normalize">
+                            <i class="fa fa-circle-o"></i>重置 normalize.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalPrint' %}active{% endif %}">
+                        <a href="/bootstrap/global/print">
+                            <i class="fa fa-circle-o"></i>打印 print.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalGlyphicons' %}active{% endif %}">
+                        <a href="/bootstrap/global/glyphicons">
+                            <i class="fa fa-circle-o"></i>图标 glyphicons.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalScaffolding' %}active{% endif %}">
+                        <a href="/bootstrap/global/scaffolding">
+                            <i class="fa fa-circle-o"></i>脚手架 scaffolding.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalType' %}active{% endif %}">
+                        <a href="/bootstrap/global/type">
+                            <i class="fa fa-circle-o"></i>排版 type.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalCode' %}active{% endif %}">
+                        <a href="/bootstrap/global/code">
+                            <i class="fa fa-circle-o"></i>代码 code.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalGrid' %}active{% endif %}">
+                        <a href="/bootstrap/global/grid">
+                            <i class="fa fa-circle-o"></i>栅格系统 grid.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalTables' %}active{% endif %}">
+                        <a href="/bootstrap/global/tables">
+                            <i class="fa fa-circle-o"></i>表格 tables.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalForms' %}active{% endif %}">
+                        <a href="/bootstrap/global/forms">
+                            <i class="fa fa-circle-o"></i>表单 forms.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalButtons' %}active{% endif %}">
+                        <a href="/bootstrap/global/buttons">
+                            <i class="fa fa-circle-o"></i>按钮 buttons.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalUtilities' %}active{% endif %}">
+                        <a href="/bootstrap/global/utilities">
+                            <i class="fa fa-circle-o"></i>辅助类 utilities.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalResponsiveUtilities' %}active{% endif %}">
+                        <a href="/bootstrap/global/responsiveUtilities">
+                            <i class="fa fa-circle-o"></i>响应式工具 responsive-utilities.less</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-gears"></i>
+                    <span>源码 - 组件</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{% if pageActive == 'componentsAnimations' %}active{% endif %}">
+                        <a href="/bootstrap/components/animations">
+                            <i class="fa fa-circle-o"></i>动画 component-animations.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsDropdowns' %}active{% endif %}">
+                        <a href="/bootstrap/components/dropdowns">
+                            <i class="fa fa-circle-o"></i>下拉菜单 dropdowns.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsButtonGroups' %}active{% endif %}">
+                        <a href="/bootstrap/components/buttonGroups">
+                            <i class="fa fa-circle-o"></i>按钮组 button-groups.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsInputGroups' %}active{% endif %}">
+                        <a href="/bootstrap/components/inputGroups">
+                            <i class="fa fa-circle-o"></i>输入框组 input-groups.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsNavs' %}active{% endif %}">
+                        <a href="/bootstrap/components/navs">
+                            <i class="fa fa-circle-o"></i>导航 navs.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsNavbar' %}active{% endif %}">
+                        <a href="/bootstrap/components/navbar">
+                            <i class="fa fa-circle-o"></i>导航条 navbar.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsBreadcrumbs' %}active{% endif %}">
+                        <a href="/bootstrap/components/breadcrumbs">
+                            <i class="fa fa-circle-o"></i>面包屑 breadcrumbs.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsPagination' %}active{% endif %}">
+                        <a href="/bootstrap/components/pagination">
+                            <i class="fa fa-circle-o"></i>分页 pagination.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsPager' %}active{% endif %}">
+                        <a href="/bootstrap/components/pager">
+                            <i class="fa fa-circle-o"></i>翻页 pager.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsLabels' %}active{% endif %}">
+                        <a href="/bootstrap/components/labels">
+                            <i class="fa fa-circle-o"></i>标签 labels.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsBadges' %}active{% endif %}">
+                        <a href="/bootstrap/components/badges">
+                            <i class="fa fa-circle-o"></i>徽章 badges.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsJumbotron' %}active{% endif %}">
+                        <a href="/bootstrap/components/jumbotron">
+                            <i class="fa fa-circle-o"></i>巨幕 jumbotron.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsThumbnails' %}active{% endif %}">
+                        <a href="/bootstrap/components/thumbnails">
+                            <i class="fa fa-circle-o"></i>缩略图 thumbnails.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsAlerts' %}active{% endif %}">
+                        <a href="/bootstrap/components/alerts">
+                            <i class="fa fa-circle-o"></i>警告框 alerts.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsProgressBars' %}active{% endif %}">
+                        <a href="/bootstrap/components/progressBars">
+                            <i class="fa fa-circle-o"></i>进度条 progress-bars.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsMedia' %}active{% endif %}">
+                        <a href="/bootstrap/components/media">
+                            <i class="fa fa-circle-o"></i>媒体布局 media.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsListGroup' %}active{% endif %}">
+                        <a href="/bootstrap/components/listGroup">
+                            <i class="fa fa-circle-o"></i>列表组 list-group.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsPanels' %}active{% endif %}">
+                        <a href="/bootstrap/components/panels">
+                            <i class="fa fa-circle-o"></i>面板 panels.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsResponsiveEmbed' %}active{% endif %}">
+                        <a href="/bootstrap/components/responsiveEmbed">
+                            <i class="fa fa-circle-o"></i>响应式嵌入内容 responsive-embed.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsWells' %}active{% endif %}">
+                        <a href="/bootstrap/components/wells">
+                            <i class="fa fa-circle-o"></i>洼池 wells.less</a>
+                    </li>
+                    <li class="{% if pageActive == 'componentsClose' %}active{% endif %}">
+                        <a href="/bootstrap/components/close">
+                            <i class="fa fa-circle-o"></i>关闭按钮 close.less</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-anchor"></i>
+                    <span>源码 - 插件</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                
+                <ul class="treeview-menu">
+                    <li class="{% if pageActive == 'widgetsSummary' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/summary">
+                            <i class="fa fa-circle-o"></i>概述</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsTransition' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/transition">
+                            <i class="fa fa-circle-o"></i>过渡效果 transition.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsAlert' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/alert">
+                            <i class="fa fa-circle-o"></i>警告框 alert.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsTooltip' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/tooltip">
+                            <i class="fa fa-circle-o"></i>提示工具 tooltip.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsPopover' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/popover">
+                            <i class="fa fa-circle-o"></i>弹出框 popover.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsModal' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/modal">
+                            <i class="fa fa-circle-o"></i>模态框 modal.js</a>
+                    </li>
+                    
+                    <li class="{% if pageActive == 'widgetsDropdown' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/dropdown">
+                            <i class="fa fa-circle-o"></i>下拉菜单 dropdown.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsScrollspy' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/scrollspy">
+                            <i class="fa fa-circle-o"></i>滚动监听 scrollspy.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsTab' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/tab">
+                            <i class="fa fa-circle-o"></i>选项卡 tab.js</a>
+                    </li>
+
+                    <li class="{% if pageActive == 'widgetsCollapse' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/collapse">
+                            <i class="fa fa-circle-o"></i>折叠 collapse.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsCarousel' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/carousel">
+                            <i class="fa fa-circle-o"></i>轮播 carousel.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsAffix' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/affix">
+                            <i class="fa fa-circle-o"></i>固定 affix.js</a>
+                    </li>
+                    <li class="{% if pageActive == 'widgetsButton' %}active{% endif %}">
+                        <a href="/bootstrap/widgets/button">
+                            <i class="fa fa-circle-o"></i>按钮 button.js</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-plane"></i>
+                    <span>快速使用</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{% if pageActive == 'quickuseGrid' %}active{% endif %}">
+                        <a href="/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>栅格系统</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>布局</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>图标</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>排版</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>辅助类</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>代码</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>按钮</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>图片</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>表格</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>分页</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>表单</a>
+                    </li>
+                    
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>输入框组</a>
+                    </li>
+                    <li class="{% if pageActive == 'quickuse' %}active{% endif %}">
+                        <a href="#/bootstrap/quickuse/grid">
+                            <i class="fa fa-circle-o"></i>布局</a>
+                    </li>
+                </ul>
+                <!--标签 徽章 进度条 列表组 面板 洼池 巨幕 缩略图 面包屑 导航条 下拉菜单 按钮组 选项卡 
+               警告框 工具提示 弹出框 模态框 折叠 轮播 
+                -->
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+{% endblock %}

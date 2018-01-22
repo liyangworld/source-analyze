@@ -1,0 +1,28 @@
+{% extends "../_layouts/layout_home.html" %} 
+{% set title = "欢迎来到源码解读" %} 
+{% set pageActive = "description" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">项目说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>此项目致力于对流行项目的源代码进行梳理，以达到更好的学习和使用的目的。</p>
+        <p>目前计划梳理的项目如下：</p>
+        <ol>
+            <li>Bootstrap</li>
+            <li>lodash</li>
+            <li>moment</li>
+            
+            <li>jQuery</li>
+        </ol>
+    </div>
+
+</div>
+
+{% endblock %}

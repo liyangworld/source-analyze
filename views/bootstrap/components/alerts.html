@@ -1,0 +1,203 @@
+{% extends "../../_layouts/layout_bootstrap.html" %} 
+{% set title = "Bootstrap-组件-警告框" %} 
+{% set pageActive = "componentsAlerts" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title">组件 - 警告框</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="box-header with-border">
+        <p>alerts.less </p>
+    </div>
+    
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">Less</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">Sass</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-less">
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+    padding: @alert-padding;
+    margin-bottom: @line-height-computed;
+    border: 1px solid transparent;
+    border-radius: @alert-border-radius;
+
+    // Headings for larger alerts
+    h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing @headings-color
+    color: inherit;
+    }
+
+    // Provide class for links that match alerts
+    .alert-link {
+    font-weight: @alert-link-font-weight;
+    }
+
+    // Improve alignment and spacing of inner content
+    > p,
+    > ul {
+    margin-bottom: 0;
+    }
+
+    > p + p {
+    margin-top: 5px;
+    }
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+    padding-right: (@alert-padding + 20);
+
+    // Adjust close link position
+    .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+    }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+    .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+}
+
+.alert-info {
+    .alert-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+}
+
+.alert-warning {
+    .alert-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
+}
+
+.alert-danger {
+    .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}                            
+                        </code>
+                    </pre>
+        
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-scss">
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+    padding: $alert-padding;
+    margin-bottom: $line-height-computed;
+    border: 1px solid transparent;
+    border-radius: $alert-border-radius;
+
+    // Headings for larger alerts
+    h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+    }
+
+    // Provide class for links that match alerts
+    .alert-link {
+    font-weight: $alert-link-font-weight;
+    }
+
+    // Improve alignment and spacing of inner content
+    > p,
+    > ul {
+    margin-bottom: 0;
+    }
+
+    > p + p {
+    margin-top: 5px;
+    }
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+    padding-right: ($alert-padding + 20);
+
+    // Adjust close link position
+    .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+    }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+    @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+}
+
+.alert-info {
+    @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+}
+
+.alert-warning {
+    @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
+
+.alert-danger {
+    @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

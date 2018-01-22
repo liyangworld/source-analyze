@@ -1,0 +1,105 @@
+{% extends "../../_layouts/layout_bootstrap.html" %} 
+{% set title = "Bootstrap-插件-过渡效果" %} 
+{% set pageActive = "widgetsTransition" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title">插件 - 过渡效果</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="box-header with-border">
+        <p>transition.js </p>
+    </div>
+    
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">js</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+/* ========================================================================
+* Bootstrap: transition.js v3.3.7
+* http://getbootstrap.com/javascript/#transitions
+* ========================================================================
+* Copyright 2011-2016 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* ======================================================================== */
+
+
++function ($) {
+    'use strict';
+
+    // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+    // ============================================================
+
+    function transitionEnd() {
+    var el = document.createElement('bootstrap')
+
+    var transEndEventNames = {
+        WebkitTransition : 'webkitTransitionEnd',
+        MozTransition    : 'transitionend',
+        OTransition      : 'oTransitionEnd otransitionend',
+        transition       : 'transitionend'
+    }
+
+    for (var name in transEndEventNames) {
+        if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
+        }
+    }
+
+    return false // explicit for ie8 (  ._.)
+    }
+
+    // http://blog.alexmaccaw.com/css-transitions
+    $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+    }
+
+    $(function () {
+    $.support.transition = transitionEnd()
+
+    if (!$.support.transition) return
+
+    $.event.special.bsTransitionEnd = {
+        bindType: $.support.transition.end,
+        delegateType: $.support.transition.end,
+        handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
+        }
+    }
+    })
+
+}(jQuery);                                                    
+                        </code>
+                    </pre>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

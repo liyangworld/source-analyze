@@ -1,0 +1,37 @@
+body {
+  font-family: "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;
+}
+.fixed .main-sidebar{
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+pre{
+  padding: 0;
+  margin: -18px 0 -35px;
+  border: none;
+  background-color: inherit;
+  font-size: 15px;
+}
+pre code{
+  border-radius: 4px;
+}
+
+.skin-green .sidebar-menu li.menu-open>a{
+  color: #fff;
+}
+
+.bg-light{
+  background: #F7F7F7;
+}
+
+.box-header.header-toggle{
+  cursor: pointer;
+}
+.collapsed-box .box-header.header-toggle{
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.box .nav-tabs-custom{
+  margin-bottom: 0;
+}

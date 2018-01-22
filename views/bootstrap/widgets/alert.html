@@ -1,0 +1,140 @@
+{% extends "../../_layouts/layout_bootstrap.html" %} 
+{% set title = "Bootstrap-插件-警告框" %} 
+{% set pageActive = "widgetsAlert" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title">插件 - 警告框</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="box-header with-border">
+        <p>alert.js </p>
+    </div>
+    
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">js</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+/* ========================================================================
+* Bootstrap: alert.js v3.3.7
+* http://getbootstrap.com/javascript/#alerts
+* ========================================================================
+* Copyright 2011-2016 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* ======================================================================== */
+
+
++function ($) {
+    'use strict';
+
+    // ALERT CLASS DEFINITION
+    // ======================
+
+    var dismiss = '[data-dismiss="alert"]'
+    var Alert   = function (el) {
+    $(el).on('click', dismiss, this.close)
+    }
+
+    Alert.VERSION = '3.3.7'
+
+    Alert.TRANSITION_DURATION = 150
+
+    Alert.prototype.close = function (e) {
+    var $this    = $(this)
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+        selector = $this.attr('href')
+        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = $(selector === '#' ? [] : selector)
+
+    if (e) e.preventDefault()
+
+    if (!$parent.length) {
+        $parent = $this.closest('.alert')
+    }
+
+    $parent.trigger(e = $.Event('close.bs.alert'))
+
+    if (e.isDefaultPrevented()) return
+
+    $parent.removeClass('in')
+
+    function removeElement() {
+        // detach from parent, fire event then clean up data
+        $parent.detach().trigger('closed.bs.alert').remove()
+    }
+
+    $.support.transition && $parent.hasClass('fade') ?
+        $parent
+        .one('bsTransitionEnd', removeElement)
+        .emulateTransitionEnd(Alert.TRANSITION_DURATION) :
+        removeElement()
+    }
+
+
+    // ALERT PLUGIN DEFINITION
+    // =======================
+
+    function Plugin(option) {
+    return this.each(function () {
+        var $this = $(this)
+        var data  = $this.data('bs.alert')
+
+        if (!data) $this.data('bs.alert', (data = new Alert(this)))
+        if (typeof option == 'string') data[option].call($this)
+    })
+    }
+
+    var old = $.fn.alert
+
+    $.fn.alert             = Plugin
+    $.fn.alert.Constructor = Alert
+
+
+    // ALERT NO CONFLICT
+    // =================
+
+    $.fn.alert.noConflict = function () {
+    $.fn.alert = old
+    return this
+    }
+
+
+    // ALERT DATA-API
+    // ==============
+
+    $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
+
+}(jQuery);                           
+                        </code>
+                    </pre>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

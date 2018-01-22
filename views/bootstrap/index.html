@@ -1,0 +1,96 @@
+{% extends "../_layouts/layout_bootstrap.html" %} 
+{% set title = "欢迎解读 Bootstrap" %} 
+{% set pageActive = "description" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">Bootstrap 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>Bootstrap 是Twitter的一个开源项目，首个版本发布于 2011年8月19日。在 Bootstrap 2 版本中，框架添加了对响应式布局的支持；在 Bootstrap 3 版本中，对整个框架进行了重构，并融入了“移动设备优先”的理念。</p>
+        <p>Bootstrap 中的样式源码是由 Less 编辑的，并维护了相应的 Saas 版。</p>
+        <p>Bootstrap 中的所有 JavaScript 插件都依赖 jQuery。</p>
+    </div>
+
+</div>
+
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h3 class="box-title">兼容性</h3>
+    </div>
+
+    <div class="box-body">
+        <p>Bootstrap 3 版本依赖的jQuery最低版本为1.9.1，jQuery 1.x 的版本都是支持 IE6-IE8 的。</p>
+        <p>IE9 于2011年3月发行，HTML 5 规范于2012年发布。因此需引入 html5shiv.js 以支持 H5 的新增标签。</p>
+        <p>IE8 不支持圆角、投影等 CSS3 属性，IE9 不支持过渡、动画等 CSS3 属性。</p>
+        <p>IE8 不支持媒体查询这一 CSS3 属性，因此需要引入 respond.js 以支持媒体查询。注：</p>
+        <ol>
+            <li>Respond.js 和 CSS 文件被放在不同的域名或子域名下面（例如，使用CDN）时需要一些额外的设置。可在 Respond.js Github上查看。</li>
+            <li>由于浏览器的安全机制，Respond.js 不能在通过 file:// 协议访问的页面上发挥正常的功能。</li>
+            <li>Respond.js 不支持通过 @import 指令所引入的 CSS 文件。</li>
+        </ol>
+    </div>
+
+</div>
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">基本模板</h3>
+    </div>
+
+    <div class="box-body">
+        <pre>
+            <code class="lang-html"> 
+&lt;!DOCTYPE html>
+&lt;html lang="zh-CN">
+    &lt;head>
+        &lt;meta charset="utf-8">
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+        &lt;meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        
+        &lt;title>基本模板&lt;/title>
+
+        &lt;link href="css/bootstrap.min.css" rel="stylesheet">
+
+        &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        &lt;!--[if lt IE 9]>
+            &lt;script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js">&lt;/script>
+            &lt;script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">&lt;/script>
+        &lt;![endif]-->
+
+    &lt;/head>
+    &lt;body>
+        &lt;h1>你好，世界！&lt;/h1>
+
+        &lt;script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js">&lt;/script>
+        &lt;!-- Include all compiled plugins (below), or include individual files as needed -->
+        &lt;script src="js/bootstrap.min.js">&lt;/script>
+
+    &lt;/body>
+&lt;/html>
+            </code>
+        </pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

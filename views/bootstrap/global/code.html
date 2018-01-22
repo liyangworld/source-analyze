@@ -1,0 +1,194 @@
+{% extends "../../_layouts/layout_bootstrap.html" %} 
+{% set title = "Bootstrap-全局样式-代码" %} 
+{% set pageActive = "globalCode" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title">全局样式 - 代码</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div class="box-header with-border">
+        <p>code.less 文件主要是设置代码显示样式，涉及如下标签：code、kbd、pre、samp。</p>
+    </div>
+    
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">Less</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">Sass</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-less">
+//
+// Code (inline and block)
+// --------------------------------------------------
+
+// Inline and block code styles
+code,
+kbd,
+pre,
+samp {
+    font-family: @font-family-monospace;
+}
+
+// Inline code
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: @code-color;
+    background-color: @code-bg;
+    border-radius: @border-radius-base;
+}
+
+// User input typically entered via keyboard
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: @kbd-color;
+    background-color: @kbd-bg;
+    border-radius: @border-radius-small;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+
+    kbd {
+    padding: 0;
+    font-size: 100%;
+    font-weight: bold;
+    box-shadow: none;
+    }
+}
+
+// Blocks of code
+pre {
+    display: block;
+    padding: ((@line-height-computed - 1) / 2);
+    margin: 0 0 (@line-height-computed / 2);
+    font-size: (@font-size-base - 1); // 14px to 13px
+    line-height: @line-height-base;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: @pre-color;
+    background-color: @pre-bg;
+    border: 1px solid @pre-border-color;
+    border-radius: @border-radius-base;
+
+    // Account for some code outputs that place code tags in pre tags
+    code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+    }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+    max-height: @pre-scrollable-max-height;
+    overflow-y: scroll;
+}
+                        </code>
+                    </pre>
+        
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-scss">
+//
+// Code (inline and block)
+// --------------------------------------------------
+
+
+// Inline and block code styles
+code,
+kbd,
+pre,
+samp {
+    font-family: $font-family-monospace;
+}
+
+// Inline code
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: $code-color;
+    background-color: $code-bg;
+    border-radius: $border-radius-base;
+}
+
+// User input typically entered via keyboard
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: $kbd-color;
+    background-color: $kbd-bg;
+    border-radius: $border-radius-small;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+
+    kbd {
+    padding: 0;
+    font-size: 100%;
+    font-weight: bold;
+    box-shadow: none;
+    }
+}
+
+// Blocks of code
+pre {
+    display: block;
+    padding: (($line-height-computed - 1) / 2);
+    margin: 0 0 ($line-height-computed / 2);
+    font-size: ($font-size-base - 1); // 14px to 13px
+    line-height: $line-height-base;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: $pre-color;
+    background-color: $pre-bg;
+    border: 1px solid $pre-border-color;
+    border-radius: $border-radius-base;
+
+    // Account for some code outputs that place code tags in pre tags
+    code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+    }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+    max-height: $pre-scrollable-max-height;
+    overflow-y: scroll;
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "../_layouts/layout_base.html" %} 
+
+{% block mainSidebar %}
+
+<aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <li class="{% if pageActive == 'description' %}active{% endif %}">
+                <a href="/">
+                    <i class="fa fa-free-code-camp"></i>
+                    <span>项目说明</span>
+                </a>
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+{% endblock %}

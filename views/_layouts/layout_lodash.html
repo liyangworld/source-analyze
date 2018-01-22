@@ -1,0 +1,66 @@
+{% extends "../_layouts/layout_base.html" %} 
+
+{% set headerNav = "lodash" %} 
+
+{% block mainSidebar %}
+
+<aside class="main-sidebar lodash">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <li class="{% if pageActive == 'description' %}active{% endif %}">
+                <a href="/lodash">
+                    <i class="fa fa-free-code-camp"></i>
+                    <span>解读 Lodash v4.17.4</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-flag"></i>
+                    <span>源码 - Array</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+
+                <ul class="treeview-menu">
+                    <li class="{% if pageActive == 'globalSummary' %}active{% endif %}">
+                        <a href="/lodash/array#chunk">
+                            <i class="fa fa-circle-o"></i>_.chunk</a>
+                    </li>
+                    <li class="{% if pageActive == 'globalSummary' %}active{% endif %}">
+                        <a href="/lodash/array#compact">
+                            <i class="fa fa-circle-o"></i>_.compact</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li class="treeview">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-flag"></i>
+                    <span>源码 - Collection</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+
+                <ul class="treeview-menu">
+                    
+                </ul>
+
+            </li>
+
+
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+{% endblock %}

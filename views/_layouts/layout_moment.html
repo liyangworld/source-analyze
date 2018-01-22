@@ -1,0 +1,27 @@
+{% extends "../_layouts/layout_base.html" %} 
+
+{% set headerNav = "moment" %} 
+
+{% block mainSidebar %}
+
+<aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <li class="{% if pageActive == 'description' %}active{% endif %}">
+                <a href="/moment">
+                    <i class="fa fa-free-code-camp"></i>
+                    <span>解读 Moment v4.17.4</span>
+                </a>
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+{% endblock %}
