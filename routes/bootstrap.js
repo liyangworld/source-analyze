@@ -162,7 +162,9 @@ router.get('/widgets/button', function (req, res, next) {
 router.get('/quickuse/grid', function (req, res, next) {
   res.render('bootstrap/quickuse/grid');
 });
-
+router.get('/quickuse/layout', function (req, res, next) {
+  res.render('bootstrap/quickuse/layout');
+});
 
 
 

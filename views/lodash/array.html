@@ -18,4 +18,116 @@
 
 </div>
 
+<!--==============_.chunk===================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a href="#chunk">_.chunk(array, [size=1])</a></h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                    将数组（array）拆分成多个 size 长度的区块，并将这些区块组成一个新数组。 如果array 无法被分割成全部等长的区块，那么最后剩余的元素将组成一个区块。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">引入版本</span>
+            <span class="version-value">3.0.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>array (Array): 需要处理的数组</li>
+            <li>[size=1] (number): 每个数组区块的长度</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(Array): 返回一个包含拆分区块的新数组（相当于一个二维数组）。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+_.chunk(['a', 'b', 'c', 'd', 'e'], 2);
+// => [['a', 'b'], ['c', 'd'], ['e']]
+
+_.chunk(['a', 'b', 'c', 'd', 'e'], 3);
+// => [['a', 'b', 'c'], ['d', 'e']]
+
+_.chunk([], 3);
+// => []
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* Creates an array of elements split into groups the length of `size`.
+* If `array` can't be split evenly, the final chunk will be the remaining
+* elements.
+*
+* @static
+* @memberOf _
+* @since 3.0.0
+* @category Array
+* @param {Array} array The array to process.
+* @param {number} [size=1] The length of each chunk
+* @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+* @returns {Array} Returns the new array of chunks.
+* @example
+*
+* _.chunk(['a', 'b', 'c', 'd'], 2);
+* // => [['a', 'b'], ['c', 'd']]
+*
+* _.chunk(['a', 'b', 'c', 'd'], 3);
+* // => [['a', 'b', 'c'], ['d']]
+*/
+function chunk(array, size, guard) {
+    if ((guard ? isIterateeCall(array, size, guard) : size === undefined)) {
+        size = 1;
+    } else {
+        size = nativeMax(toInteger(size), 0);
+    }
+    var length = array == null ? 0 : array.length;
+    if (!length || size < 1) {
+        return [];
+    }
+    var index = 0,
+        resIndex = 0,
+        result = Array(nativeCeil(length / size));
+
+    while (index < length) {
+        result[resIndex++] = baseSlice(array, index, (index += size));
+    }
+    return result;
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+
 {% endblock %}
