@@ -15,6 +15,11 @@ $(function(){
             lodash_lis.removeClass('active');
             $(this).closest('li').addClass('active');
         });
+
+        $(".anchor").each(function(index, el){
+            $(el).text(index + 1);
+        });
+
     }
 
     

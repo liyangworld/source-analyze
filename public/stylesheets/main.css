@@ -38,3 +38,6 @@ pre code{
 .return-detail{
   padding-left: 40px;
 }
+.badge.anchor{
+  background-color: #0f0;
+}
