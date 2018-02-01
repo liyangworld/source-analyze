@@ -1,0 +1,149 @@
+{% extends "../_layouts/layout_lodash.html" %} 
+{% set title = "欢迎解读 Lodash" %} 
+{% set pageActive = "lang" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">lang 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>lang</p>
+        
+    </div>
+
+</div>
+
+<!--====================================_.castArray==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="castArray" class="badge anchor"></a>_.castArray(value)</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                如果 value 不是数组, 那么强制转为数组。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">4.4.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>value (*): 要处理的值。</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(Array): 返回转换后的数组。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+_.castArray(1);
+// => [1]
+    
+_.castArray({ 'a': 1 });
+// => [{ 'a': 1 }]
+    
+_.castArray('abc');
+// => ['abc']
+    
+_.castArray(null);
+// => [null]
+    
+_.castArray(undefined);
+// => [undefined]
+    
+_.castArray();
+// => []
+    
+var array = [1, 2, 3];
+console.log(_.castArray(array) === array);
+// => true
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* Casts `value` as an array if it's not one.
+*
+* @static
+* @memberOf _
+* @since 4.4.0
+* @category Lang
+* @param {*} value The value to inspect.
+* @returns {Array} Returns the cast array.
+* @example
+*
+* _.castArray(1);
+* // => [1]
+*
+* _.castArray({ 'a': 1 });
+* // => [{ 'a': 1 }]
+*
+* _.castArray('abc');
+* // => ['abc']
+*
+* _.castArray(null);
+* // => [null]
+*
+* _.castArray(undefined);
+* // => [undefined]
+*
+* _.castArray();
+* // => []
+*
+* var array = [1, 2, 3];
+* console.log(_.castArray(array) === array);
+* // => true
+*/
+function castArray() {
+    if (!arguments.length) {
+        return [];
+    }
+    var value = arguments[0];
+    return isArray(value) ? value : [value];
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+
+
+{% endblock %}

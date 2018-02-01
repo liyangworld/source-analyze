@@ -1,0 +1,109 @@
+{% extends "../_layouts/layout_lodash.html" %} 
+{% set title = "欢迎解读 Lodash" %} 
+{% set pageActive = "math" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">math 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>math</p>
+        
+    </div>
+
+</div>
+
+<!--====================================_.add==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="add" class="badge anchor"></a>_.add(augend, addend)</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                两个数相加。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">3.4.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>augend (number): 相加的第一个数。</li>
+            <li>addend (number): 相加的第二个数。</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(number): 返回总和。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+_.add(6, 4);
+// => 10
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* Adds two numbers.
+*
+* @static
+* @memberOf _
+* @since 3.4.0
+* @category Math
+* @param {number} augend The first number in an addition.
+* @param {number} addend The second number in an addition.
+* @returns {number} Returns the total.
+* @example
+*
+* _.add(6, 4);
+* // => 10
+*/
+var add = createMathOperation(function(augend, addend) {
+    return augend + addend;
+}, 0);
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "../_layouts/layout_lodash.html" %} 
+{% set title = "欢迎解读 Lodash" %} 
+{% set pageActive = "util" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">util 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>util</p>
+        
+    </div>
+
+</div>
+
+<!--====================================_.attempt==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="attempt" class="badge anchor"></a>_.attempt(array, [size=1])</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                尝试调用func，返回结果 或者 捕捉错误对象。任何附加的参数都会在调用时传给func。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">3.0.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>func (Function): 要尝试调用的函数。</li>
+            <li>[args] (...*): 调用func时，传递的参数。</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(*): 返回func结果或者错误对象。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+// Avoid throwing errors for invalid selectors.
+var elements = _.attempt(function(selector) {
+    return document.querySelectorAll(selector);
+}, '>_>');
+    
+if (_.isError(elements)) {
+    elements = [];
+}
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* Attempts to invoke `func`, returning either the result or the caught error
+* object. Any additional arguments are provided to `func` when it's invoked.
+*
+* @static
+* @memberOf _
+* @since 3.0.0
+* @category Util
+* @param {Function} func The function to attempt.
+* @param {...*} [args] The arguments to invoke `func` with.
+* @returns {*} Returns the `func` result or error object.
+* @example
+*
+* // Avoid throwing errors for invalid selectors.
+* var elements = _.attempt(function(selector) {
+*   return document.querySelectorAll(selector);
+* }, '>_>');
+*
+* if (_.isError(elements)) {
+*   elements = [];
+* }
+*/
+var attempt = baseRest(function(func, args) {
+    try {
+        return apply(func, undefined, args);
+    } catch (e) {
+        return isError(e) ? e : new Error(e);
+    }
+});
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+
+
+{% endblock %}

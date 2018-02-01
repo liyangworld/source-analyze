@@ -1,0 +1,124 @@
+{% extends "../_layouts/layout_lodash.html" %} 
+{% set title = "欢迎解读 Lodash" %} 
+{% set pageActive = "collection" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">Collection 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>Collection</p>
+        
+    </div>
+
+</div>
+
+<!--====================================_.countBy==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="countBy" class="badge anchor"></a>_.countBy(collection, [iteratee=_.identity])</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                创建一个组成对象，key（键）是经过 iteratee（迭代函数） 执行处理collection中每个元素后返回的结果，每个key（键）对应的值是 iteratee（迭代函数）返回该key（键）的次数（愚人码头注：迭代次数）。 iteratee 调用一个参数：(value)。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">0.5.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>collection (Array|Object): 一个用来迭代的集合。</li>
+            <li>[iteratee=_.identity] (Array|Function|Object|string): 一个迭代函数，用来转换key（键）。</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(Object): 返回一个组成集合对象。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+_.countBy([6.1, 4.2, 6.3], Math.floor);
+// => { '4': 1, '6': 2 }
+    
+// The `_.property` iteratee shorthand.
+_.countBy(['one', 'two', 'three'], 'length');
+// => { '3': 2, '5': 1 }
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* Creates an object composed of keys generated from the results of running
+* each element of `collection` thru `iteratee`. The corresponding value of
+* each key is the number of times the key was returned by `iteratee`. The
+* iteratee is invoked with one argument: (value).
+*
+* @static
+* @memberOf _
+* @since 0.5.0
+* @category Collection
+* @param {Array|Object} collection The collection to iterate over.
+* @param {Function} [iteratee=_.identity] The iteratee to transform keys.
+* @returns {Object} Returns the composed aggregate object.
+* @example
+*
+* _.countBy([6.1, 4.2, 6.3], Math.floor);
+* // => { '4': 1, '6': 2 }
+*
+* // The `_.property` iteratee shorthand.
+* _.countBy(['one', 'two', 'three'], 'length');
+* // => { '3': 2, '5': 1 }
+*/
+var countBy = createAggregator(function(result, value, key) {
+    if (hasOwnProperty.call(result, key)) {
+        ++result[key];
+    } else {
+        baseAssignValue(result, key, 1);
+    }
+});
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+
+
+{% endblock %}

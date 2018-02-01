@@ -1,0 +1,200 @@
+{% extends "../_layouts/layout_lodash.html" %} 
+{% set title = "欢迎解读 Lodash" %} 
+{% set pageActive = "function" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">function 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>function</p>
+        
+    </div>
+
+</div>
+
+<!--====================================_.after==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="after" class="badge anchor"></a>_.after(n, func)</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                _.before的反向函数;此方法创建一个函数，当他被调用n或更多次之后将马上触发func 。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">0.1.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>n (number): func 方法应该在调用多少次后才执行。</li>
+            <li>func (Function): 用来限定的函数。</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(Function): 返回新的限定函数。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+var saves = ['profile', 'settings'];
+
+var done = _.after(saves.length, function() {
+    console.log('done saving!');
+});
+    
+_.forEach(saves, function(type) {
+    asyncSave({ 'type': type, 'complete': done });
+});
+// => Logs 'done saving!' after the two async saves have completed.
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* The opposite of `_.before`; this method creates a function that invokes
+* `func` once it's called `n` or more times.
+*
+* @static
+* @memberOf _
+* @since 0.1.0
+* @category Function
+* @param {number} n The number of calls before `func` is invoked.
+* @param {Function} func The function to restrict.
+* @returns {Function} Returns the new restricted function.
+* @example
+*
+* var saves = ['profile', 'settings'];
+*
+* var done = _.after(saves.length, function() {
+*   console.log('done saving!');
+* });
+*
+* _.forEach(saves, function(type) {
+*   asyncSave({ 'type': type, 'complete': done });
+* });
+* // => Logs 'done saving!' after the two async saves have completed.
+*/
+function after(n, func) {
+    if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+    }
+    n = toInteger(n);
+    return function() {
+        if (--n < 1) {
+            return func.apply(this, arguments);
+        }
+    };
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+<!--====================================_.xxxxx==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="xxxxx" class="badge anchor"></a>_.xxxxx(array, [size=1])</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                    xxx
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">xxx</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        <ol>
+            <li>xxxx</li>
+            <li>xxxx</li>
+        </ol>
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">xxxx</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_nn_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_nn_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_nn_01">
+                    <pre>
+                        <code class="lang-js">
+
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_nn_02">
+                    <pre>
+                        <code class="lang-js">
+
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+{% endblock %}

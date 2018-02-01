@@ -1,0 +1,109 @@
+{% extends "../_layouts/layout_lodash.html" %} 
+{% set title = "欢迎解读 Lodash" %} 
+{% set pageActive = "date" %} 
+
+
+
+{% block body %}
+
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">Date 说明</h3>
+    </div>
+
+    <div class="box-body">
+        <p>Date</p>
+        
+    </div>
+
+</div>
+
+<!--====================================_.now==================开始=========================-->
+<div class="box box-danger collapsed-box">
+
+    <div class="box-header with-border header-toggle" data-widget="collapse">
+        <h3 class="box-title"><a name="now" class="badge anchor"></a>_.now()</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <div class="box-header with-border">
+        <p>
+            <span class="desc-title label label-success">说明</span>
+            <span class="desc-detail">
+                获得 Unix 纪元 (1 January 1970 00:00:00 UTC) 直到现在的毫秒数。
+            </span>
+        </p>
+        <p>
+            <span class="version-title label label-warning">版本</span>
+            <span class="version-value">2.4.0</span>
+        </p>
+        <p class="parameters-title label label-info">参数</p>
+        
+        <p class="return-title label label-danger">返回</p>
+        <p class="return-detail">(number): 返回时间戳。</p>
+    </div>
+
+    <div class="box-body bg-light">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab_01_01" data-toggle="tab" aria-expanded="true">示例</a>
+                </li>
+                <li class="">
+                    <a href="#tab_01_02" data-toggle="tab" aria-expanded="false">源码</a>
+                </li>
+        
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_01_01">
+                    <pre>
+                        <code class="lang-js">
+_.defer(function(stamp) {
+        console.log(_.now() - stamp);
+    }, _.now());
+// => 记录延迟函数调用的毫秒数
+                        </code>
+                    </pre>
+                </div>
+        
+                <div class="tab-pane" id="tab_01_02">
+                    <pre>
+                        <code class="lang-js">
+/**
+* Gets the timestamp of the number of milliseconds that have elapsed since
+* the Unix epoch (1 January 1970 00:00:00 UTC).
+*
+* @static
+* @memberOf _
+* @since 2.4.0
+* @category Date
+* @returns {number} Returns the timestamp.
+* @example
+*
+* _.defer(function(stamp) {
+*   console.log(_.now() - stamp);
+* }, _.now());
+* // => Logs the number of milliseconds it took for the deferred invocation.
+*/
+var now = ctxNow || function() {
+    return root.Date.now();
+};
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+<!--====================================_.xxxxxx==================结束=========================-->
+
+
+
+
+{% endblock %}
